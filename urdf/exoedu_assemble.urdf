@@ -98,7 +98,7 @@
     </visual>
   </link>
 
-  <!-- <joint name="arm_cuff0" type="fixed">
+  <joint name="arm_cuff0" type="fixed">
     <parent link="upper_arm"/>
     <child link="upper_cuff0"/>
     <origin rpy="0 0 0" xyz="30 5 -5"/>
@@ -108,13 +108,13 @@
     <visual>
       <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/Upper_arm_Cuff_70.stl"/>
+        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/Upper_Arm_Cuff_70.stl"/>
       </geometry>
         <material name="omni/LightGrey"/>
     </visual>
-  </link> -->
+  </link>
 
-<!-- 
+
   <joint name="arm_cuff1" type="fixed">
     <parent link="upper_arm"/>
     <child link="upper_cuff1"/>
@@ -125,11 +125,11 @@
     <visual>
       <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/Upper_arm_Cuff_70.stl"/>
+        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/Upper_Arm_Cuff_70.stl"/>
       </geometry>
         <material name="omni/LightGrey"/>
     </visual>
-  </link> -->
+  </link>
 
   <joint name="motor_sensorAdapter" type="revolute">
     <parent link="motor"/>
