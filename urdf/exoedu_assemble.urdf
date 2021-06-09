@@ -1,8 +1,6 @@
-<?xml version="1.0" ?>
-
+<?xml version="1.0"?>
   <!-- The urdf model of eduexo robot arm, assign xyz movement on joint, assign rotation of link on link -->
-
-<robot name="omnipointer" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="balance">
   <material name="omni/Blue">
     <color rgba="0 0 0.8 1"/>
   </material>
@@ -16,7 +14,7 @@
     <color rgba="1 1 0 1"/>
   </material>
   <material name="omni/LightGrey">
-    <color rgba="0.6 0.6 0.6 0.999"/>
+    <color rgba="0.6 0.6 0.6 1"/>
   </material>
   <material name="omni/DarkGrey">
     <color rgba="0.4 0.4 0.4 1"/>
@@ -87,14 +85,12 @@
   <joint name="adapter_upper_joint" type="fixed">
     <parent link="motor_adapter"/>
     <child link="upper_arm"/>
-    <!-- <origin rpy="1.57 -1.57 1.57" xyz="25 12 0"/> -->
     <origin rpy="0 0 0" xyz="25 12 0"/>
     <axis xyz="1 0 0"/>
   </joint>
   <link name="upper_arm">
     <visual>
       <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
-      <!-- <origin rpy="0 0 0" xyz="0 0 0"/> -->
       <geometry>
         <mesh filename="urdf/EduExo_STL_files/Upper_Arm_Segment.stl"/>
       </geometry>
@@ -102,7 +98,7 @@
     </visual>
   </link>
 
-  <joint name="arm_cuff0" type="fixed">
+  <!-- <joint name="arm_cuff0" type="fixed">
     <parent link="upper_arm"/>
     <child link="upper_cuff0"/>
     <origin rpy="0 0 0" xyz="30 5 -5"/>
@@ -116,9 +112,9 @@
       </geometry>
         <material name="omni/LightGrey"/>
     </visual>
-  </link>
+  </link> -->
 
-
+<!-- 
   <joint name="arm_cuff1" type="fixed">
     <parent link="upper_arm"/>
     <child link="upper_cuff1"/>
@@ -133,7 +129,7 @@
       </geometry>
         <material name="omni/LightGrey"/>
     </visual>
-  </link>
+  </link> -->
 
   <joint name="motor_sensorAdapter" type="revolute">
     <parent link="motor"/>
