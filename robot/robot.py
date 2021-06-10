@@ -4,7 +4,7 @@ import pybullet_data
 import pybullet_envs
 
 class ExoRobot:
-    def __init__(self) -> None:
+    def __init__(self) :
         p.connect(p.GUI)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.loadURDF("plane.urdf")
@@ -33,12 +33,12 @@ class ExoRobot:
         p.setRealTimeSimulation(1)
 
 
-    def step(self,joint_angle) -> None:
+    def step(self,joint_angle) :
         p.setJointMotorControl2(self.exo_robot,self.jointIds[0],p.POSITION_CONTROL,joint_angle, force=500.)
         p.setTimeStep(0.01)
         return
     
-    def executeDebuger(self) -> None:
+    def executeDebuger(self) :
         while(1):
             p.getCameraImage(320,200)
             info = p.getJointInfo(self.exo_robot,0)

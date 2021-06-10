@@ -6,7 +6,7 @@ from robot.robot import ExoRobot
 r = ExoRobot()
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + 'I heard %f', data.data)
-    goal_angle = data.data
+    goal_angle = (data.data / 180.0) *3.14
     r.step(goal_angle)
 
 def listener():

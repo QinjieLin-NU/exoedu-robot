@@ -37,7 +37,7 @@
   <joint name="base_motor" type="fixed">
     <parent link="base_link"/>
     <child link="motor"/>
-    <origin rpy="1.57 0 0" xyz="-5 0 30"/>
+    <origin rpy="-1.57 0 0" xyz="-5 0 30"/>
     <axis xyz="1 0 0"/>
   </joint>
   <link name="motor">
