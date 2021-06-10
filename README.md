@@ -2,13 +2,11 @@
 
 ## simulation
 
-Build urdf model using stl files and load in the pybullet simulation.
-```
-python test_robot.py
-```
-
-<!-- ![](./urdf/robot.PNG)  -->
-<img src="./urdf/robot.PNG" width="300" height="180">
+1. Build urdf model using stl files and load in the pybullet simulation.
+    ```
+    python test_robot.py
+    ```
+    <img src="./urdf/robot.PNG" width="300" height="180">
 
 ## connect through ROS
 
