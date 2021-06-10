@@ -9,10 +9,10 @@
     ```
     <img src="./urdf/robot.PNG" width="300" height="180">
 
-## connect through ROS
+## connect through ROS 
 
-1. launch aduino
-    using arduino IDE to upload the [code](./arduino/ros_test.ino) to the arduino/ Once the compilation is completed, you will receive a message about program storage space and dynamic memory usage, similar to this:
+1. launch aduino - [tutorial](http://wiki.ros.org/rosserial_arduino/Tutorials).
+    Use arduino IDE to upload the [code](./arduino/ros_test.ino) to the arduino/ Once the compilation is completed, you will receive a message about program storage space and dynamic memory usage, similar to this:
     ```
     Sketch uses 9,392 bytes (29%) of program storage space. Maximum is 32,256 bytes. Global variables use 1,356 bytes (66%) of dynamic memory, leaving 692 bytes for local variables. Maximum is 2,048 byte
     ```
