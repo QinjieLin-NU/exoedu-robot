@@ -4,6 +4,7 @@
 
 1. Build urdf model using stl files and load in the pybullet simulation.
     ```
+    export MESA_GL_VERSION_OVERRIDE=3.3 
     python test_robot.py
     ```
     <img src="./urdf/robot.PNG" width="300" height="180">
@@ -20,6 +21,7 @@
     ```
     roscore
     rosrun rosserial_arduino serial_node.py /dev/ttyACM0 _baud:=57600
+    export MESA_GL_VERSION_OVERRIDE=3.3 
     python main.py
     ```
     ![](./urdf/sim_real_0.gif) 
