@@ -24,4 +24,4 @@ python test_robot.py
     rosrun rosserial_arduino serial_node.py /dev/ttyACM0 _baud:=57600
     python main.py
     ```
-    ![](./urdf/sim_real.mp4) 
+    ![](./urdf/sim_real_0.gif) 
