@@ -8,7 +8,8 @@ class ExoRobot:
         p.connect(p.GUI)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.loadURDF("plane.urdf")
-        self.exo_robot = p.loadURDF("urdf/exoedu_assemble.urdf",[0,0,0.5],globalScaling=0.01)
+        # self.exo_robot = p.loadURDF("urdf/exoedu_assemble.urdf",[0,0,0.5],globalScaling=0.01)
+        self.exo_robot = p.loadURDF("urdf/exoedu_scale.urdf",[0,0,0.5],globalScaling=1)
 
         p.setPhysicsEngineParameter(numSolverIterations=100)
         p.changeDynamics(self.exo_robot,-1,linearDamping=0, angularDamping=0)
