@@ -40,7 +40,7 @@ p0.configureDebugVisualizer(p0.COV_ENABLE_RENDERING,0)
 p0.setAdditionalSearchPath(os.getcwd())
 print("pd.getDataPath()",pd.getDataPath())
 flags = p0.URDF_MAINTAIN_LINK_ORDER
-laikago = p0.loadURDF("plane_implicit.urdf", flags=flags)
+#laikago = p0.loadURDF("plane_implicit.urdf", flags=flags)
 start_pos = [0,0,0.6]
 #laikago = p0.loadURDF("laikago/laikago_toes_zup.urdf", start_pos, flags=flags)
 laikago = p0.loadURDF("urdf/exoedu_assemble.urdf",[0,0,0.5],globalScaling=0.01, flags=flags)
