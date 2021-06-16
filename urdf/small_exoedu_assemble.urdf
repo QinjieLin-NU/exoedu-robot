@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+  <!-- The urdf model of eduexo robot arm, assign xyz movement on joint, assign rotation of link on link -->
+<robot name="balance">
+  <material name="omni/Blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="omni/Red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  <material name="omni/Green">
+    <color rgba="0 1 0 1"/>
+  </material>
+  <material name="omni/Yellow">
+    <color rgba="1 1 0 1"/>
+  </material>
+  <material name="omni/LightGrey">
+    <color rgba="0.6 0.6 0.6 1"/>
+  </material>
+  <material name="omni/DarkGrey">
+    <color rgba="0.4 0.4 0.4 1"/>
+  </material>
+  <material name="omni/Black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="omni/Silver">
+    <color rgba="0.75 0.75 0.75 1"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0 "/>
+      <mass value="0"/>
+      <inertia ixx="89.282" ixy="-0.47721" ixz="0.85562" iyy="107.51" iyz="0.0067576" izz="172.02"/>
+    </inertial>
+  </link>
+
+  <joint name="base_motor" type="fixed">
+    <parent link="base_link"/>
+    <child link="motor"/>
+    <origin rpy="-1.57 0 0" xyz="-0.05 0 0.30"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="motor">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.40 0.20 0.20"/>
+      </geometry>
+      <material name="omni/Black"/>
+    </visual>
+  </link>
+
+  <joint name="motor_adapter" type="fixed">
+    <parent link="motor"/>
+    <child link="motor_adapter"/>
+    <origin rpy="0 0 0" xyz="0 -0.07 -0.30"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="motor_adapter">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/small_motor_adapter.stl"/>
+      </geometry>
+      <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+  <joint name="motor_extendJoint" type="fixed">
+    <parent link="motor"/>
+    <child link="motor_extend"/>
+    <origin rpy="0 0 0" xyz="-0.25 0 0.05"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="motor_extend">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.10 0.20 0.15"/>
+      </geometry>
+      <material name="omni/Black"/>
+    </visual>
+  </link>
+
+  <joint name="adapter_upper_joint" type="fixed">
+    <parent link="motor_adapter"/>
+    <child link="upper_arm"/>
+    <origin rpy="0 0 0" xyz="0.25 0.12 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="upper_arm">
+    <visual>
+      <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/small_upper_arm.stl"/>
+      </geometry>
+        <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+  <joint name="arm_cuff0" type="fixed">
+    <parent link="upper_arm"/>
+    <child link="upper_cuff0"/>
+    <origin rpy="0 0 0" xyz="0.30 0.05 -0.05"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="upper_cuff0">
+    <visual>
+      <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/small_upper_arm_cuff_70.stl"/>
+      </geometry>
+        <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+
+  <joint name="arm_cuff1" type="fixed">
+    <parent link="upper_arm"/>
+    <child link="upper_cuff1"/>
+    <origin rpy="0 0 0" xyz="1.20 0.05 -0.05"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="upper_cuff1">
+    <visual>
+      <origin rpy="1.57 -1.57 1.57" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/EduExoCuffs/small_upper_arm_cuff_70.stl"/>
+      </geometry>
+        <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+  <joint name="motor_sensorAdapter" type="revolute">
+    <parent link="motor"/>
+    <child link="sensor_adapter"/>
+    <dynamics damping="3.0" friction="0.3"/>
+    <limit effort="30.0" lower="-3.1415926535" upper="3.1415926535" velocity="5.0"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.10"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="sensor_adapter">
+    <visual>
+      <origin rpy="3.14 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/small_interface.stl"/>
+      </geometry>
+      <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+  <joint name="sensorAdapter_sensor" type="fixed">
+    <parent link="sensor_adapter"/>
+    <child link="sensor"/>
+    <origin rpy="0 0 0" xyz="-1.02 0 -0.05"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="sensor">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.80 0.20 0.15"/>
+      </geometry>
+      <material name="omni/Silver"/>
+    </visual>
+  </link>
+
+  <joint name="sensor_lowerArm" type="fixed">
+    <parent link="sensor"/>
+    <child link="lower_arm"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="lower_arm">
+    <visual>
+      <origin rpy="3.14 0 0" xyz="0.10 0 0.05"/>
+      <geometry>
+        <mesh filename="urdf/EduExo_STL_files/small_lower_arm.stl"/>
+      </geometry>
+      <material name="omni/LightGrey"/>
+    </visual>
+  </link>
+
+</robot>
