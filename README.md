@@ -25,3 +25,18 @@
     python main.py
     ```
     ![](./urdf/sim_real_0.gif) 
+
+## connect through Webots
+
+1. launch webots with web interface. Run the [bash](./webots_worlds/install_webot.sh) to install webots thourgh binary release or deb - [tutorial](https://cyberbotics.com/doc/guide/installation-procedure?tab-language=python#installing-the-tarball-package).
+    ```
+    export WEBOTS_HOME=/home/username/webots
+    export MESA_GL_VERSION_OVERRIDE=3.3 
+    webots /root/exoedu-robot/webot_worlds/worlds/exoedu_blank.wbt   --no-sandbox  --stream
+    ```
+    In the ***webot_worlds/web*** folder, run following command to launch the web server
+    ```
+    python3 -m http.server
+    ```
+    Remember to open the simulation server port 1234 and then access the client GUI by the address: localhost_ip:8000
+
