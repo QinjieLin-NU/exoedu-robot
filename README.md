@@ -17,10 +17,13 @@
     Sketch uses 9,392 bytes (29%) of program storage space. Maximum is 32,256 bytes. Global variables use 1,356 bytes (66%) of dynamic memory, leaving 692 bytes for local variables. Maximum is 2,048 byte
     ```
 
-2. launch launch roscore and roserial to create publish and subscriber
+2. launch rosserial node to  publish sensor data
     ```
-    roscore
+    chmod a+rw /dev/ttyACM0
+    export ROS_MASTER_URI=http://192.168.100.68:11311
+    export ROS_HOSTNAME=192.168.100.203
     rosrun rosserial_arduino serial_node.py /dev/ttyACM0 _baud:=57600
+    
     export MESA_GL_VERSION_OVERRIDE=3.3 
     python main.py
     ```
