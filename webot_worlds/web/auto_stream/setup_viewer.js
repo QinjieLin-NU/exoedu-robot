@@ -39,7 +39,7 @@ function connect() {
   view.setTimeout(-1); // disable timeout that stops the simulation after a given time
   // const streamingMode = modeSelect.options[modeSelect.selectedIndex].value;
   // ws://192.168.100.108:31331  x3d
-  view.open("ws://192.168.100.108:31331", "x3d");
+  view.open("ws://192.168.100.68:1234", "x3d");
   // view.onquit = disconnect;
   // connectButton.value = 'Disconnect';
   // connectButton.onclick = disconnect;
