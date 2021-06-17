@@ -16,6 +16,5 @@ RectangleArena {
 Balance {
   hidden position_0_0 -0.8
   hidden rotation_6 0 0 -1 0.7999999999999999
-  translation 0 0.5 0
   controller "my_controller"
 }
