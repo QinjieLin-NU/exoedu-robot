@@ -40,20 +40,21 @@ rospy.init_node('listener', anonymous=True)
 # print("after listener")
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
+goal_angle = 0.0
 while robot.step(timestep) != -1:
     # Read the sensors:
     # Enter here functions to read sensor data, like:
     #  val = ds.getValue()
 
     # Enter here functions to send actuator commands, like:
-    goal_angle = 0.0
     try:
         x = rospy.wait_for_message("chatter",Float64,timeout=0.1)
         goal_angle = (x.data / 180.0) *3.14
+        print("data",x)
     except rospy.ROSException as e:
+        print("exception")
         pass
     motor.setPosition(goal_angle)
-    # print("test")
     pass
 
 # Enter here exit cleanup code.

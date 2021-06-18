@@ -42,11 +42,11 @@ from std_msgs.msg import String,Int8,Float64
 def talker():
     pub = rospy.Publisher('chatter', Float64, queue_size=10)
     rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(4) # 10hz
+    rate = rospy.Rate(1) # 10hz
     i = 0.0
     while not rospy.is_shutdown():
         i += 0.5
-        hello_str = -1*(i%3)
+        hello_str = -1*(i%3) * 180 / 3.14
         rospy.loginfo(hello_str)
         pub.publish(hello_str)
         rate.sleep()
