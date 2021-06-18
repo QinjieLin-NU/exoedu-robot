@@ -46,7 +46,7 @@ def talker():
     i = 0.0
     while not rospy.is_shutdown():
         i += 0.5
-        hello_str = -1*(i%3) * 180 / 3.14
+        hello_str = 1*(i%3) * 180 / 3.14
         rospy.loginfo(hello_str)
         pub.publish(hello_str)
         rate.sleep()

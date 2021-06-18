@@ -1,4 +1,4 @@
-from robot.robot import ExoRobot
+from robot import ExoRobot
 import time
 
 r = ExoRobot()

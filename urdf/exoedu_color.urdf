@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
   <!-- The urdf model of eduexo robot arm, assign xyz movement on joint, assign rotation of link on link -->
-<robot name="exoedu">
+<robot name="exoedu-color">
   <material name="omni/Blue">
     <color rgba="0 0 0.8 1"/>
   </material>
@@ -46,7 +46,7 @@
       <geometry>
         <box size="0.20 0.10 0.10"/>
       </geometry>
-      <material name="omni/Black"/>
+      <material name="omni/Black"> <color rgba="0 0 0 1"/> </material>
     </visual>
   </link>
 
@@ -62,7 +62,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/MotorAdapter.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-      <material name="omni/LightGrey"/>
+      <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 
@@ -94,7 +94,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/Upper_Arm_Segment.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-        <material name="omni/LightGrey"/>
+        <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 
@@ -110,7 +110,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/EduExoCuffs/Upper_Arm_Cuff_70.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-        <material name="omni/LightGrey"/>
+        <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 
@@ -127,7 +127,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/EduExoCuffs/Upper_Arm_Cuff_70.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-        <material name="omni/LightGrey"/>
+        <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 
@@ -145,7 +145,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/Interface_Motor_Sensor.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-      <material name="omni/LightGrey"/>
+      <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 
@@ -177,7 +177,7 @@
       <geometry>
         <mesh filename="EduExo_STL_files/Lower_Arm_Segment.stl" scale="0.005 0.005 0.005"/>
       </geometry>
-      <material name="omni/LightGrey"/>
+      <material name="omni/LightGrey"> <color rgba="1 1 1 1"/> </material>
     </visual>
   </link>
 

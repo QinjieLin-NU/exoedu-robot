@@ -7,7 +7,8 @@ import pybullet_envs
 p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.loadURDF("plane.urdf")
-exo_robot = p.loadURDF("urdf/exoedu_assemble.urdf",[0,0,0.5],globalScaling=0.01)
+# exo_robot = p.loadURDF("urdf/exoedu_assemble.urdf",[0,0,0.5],globalScaling=0.01)
+exo_robot = p.loadURDF("urdf/exoedu_color.urdf",[0,0,0.5])
 
 gravId = p.addUserDebugParameter("gravity",-10,10,0)
 p.setPhysicsEngineParameter(numSolverIterations=100)
